@@ -881,7 +881,7 @@ stylish rectangular glasses, thin dark frames, clear lenses,
 fluffy voluminous short white curly hair, tousled layered hair, side-swept comma bangs with exposed forehead, fluffy curled fringe, messy bangs, asymmetrical side part, soft curls framing the face, bright sky-blue and light pastel pink hair highlights,
 
 soft fluffy white floppy dog ears with folded tips, multiple silver ear piercings, small silver earrings, short thick bushy white canine tail,`,
-    outfitPrompt: `casual summer streetwear, oversized coral pink Hawaiian shirt, white windowpane plaid, colorful tropical floral prints, large navy blue and muted teal flowers, pale yellow accents, loose open shirt exposing muscular chest and abdomen, yellow piping along collar and edges, light blue denim shorts, faded denim texture, silver finger rings, rectangular silver pendant, white dog collar, white sandals, white dog collar with metal buckle and dangling chain details,`,
+    outfitPrompt: `light blue oversized denim jacket, beige contrasting collar, unbuttoned jacket, 1.7::loose-fitting white crew-neck T-shirt::, relaxed neckline, 1.3::soft draping fabric::, beige straight-leg chinos, black leather belt, adidas sneakers, wristwatch, casual vintage menswear`,
     negativePrompt: ``,
 },
 {

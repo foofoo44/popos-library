@@ -1,0 +1,392 @@
+
+---
+import { characters } from "../../data/characters";
+
+export function getStaticPaths() {
+  return characters.map((character) => ({
+    params: { id: character.id },
+    props: { character },
+  }));
+}
+
+const { character } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{character.name} | THE PRIVATE ARCHIVE</title>
+  </head>
+
+  <body>
+    <main class="archive">
+
+      <nav class="top-nav">
+        <a href="/oc-archive/archive/" class="back-link">← BACK TO ARCHIVE</a>
+        <span>CHARACTER RECORD · {character.number}</span>
+      </nav>
+
+      <header class="page-header">
+        <p>THE PRIVATE ARCHIVE</p>
+        <h1>
+  {character.furigana ? (
+    <ruby>
+      {character.name}
+      <rt>{character.furigana}</rt>
+    </ruby>
+  ) : character.name}
+</h1>
+        <div class="ornament">──── ✦ ────</div>
+      </header>
+
+      <section class="character-layout">
+
+        <div class="portrait">
+          <img src={character.image} alt={character.name} draggable="false" />
+          <p>RECORD NO. {character.number}</p>
+        </div>
+
+        <div class="character-details">
+          <h2>Character Profile</h2>
+
+          <div class="profile-list">
+            {character.profile.map((item) => (
+              <div class="profile-row">
+                <span>{item.label}</span>
+                <strong>{item.value}</strong>
+              </div>
+            ))}
+          </div>
+
+          <div class="description">
+            <p class="section-label">ABOUT</p>
+            <p>{character.description}</p>
+          </div>
+        </div>
+
+      </section>
+
+
+<section class="prompt-section">
+
+  <p class="section-label">CREATION RECORD</p>
+
+  <div class="prompt-block">
+    <div class="prompt-heading">
+      <h2>Prompt</h2>
+      <button class="copy-button" data-target="promptText" type="button">
+        COPY PROMPT
+      </button>
+    </div>
+
+    <pre id="promptText">{character.prompt}</pre>
+  </div>
+
+  <div class="prompt-block">
+    <div class="prompt-heading">
+      <h2>Outfit Prompt</h2>
+      <button class="copy-button" data-target="outfitText" type="button">
+        COPY PROMPT
+      </button>
+    </div>
+
+    <pre id="outfitText">{character.outfitPrompt}</pre>
+  </div>
+
+  <div class="prompt-block">
+    <div class="prompt-heading">
+      <h2>Negative Prompt</h2>
+      <button class="copy-button" data-target="negativeText" type="button">
+        COPY PROMPT
+      </button>
+    </div>
+
+    <pre id="negativeText">{character.negativePrompt}</pre>
+  </div>
+
+</section>
+
+
+      <footer>
+        <span>THE PRIVATE ARCHIVE</span>
+        <a href="/oc-archive/archive/">RETURN TO COLLECTION ↑</a>
+      </footer>
+
+    </main>
+
+    <script>
+
+document.querySelectorAll(".copy-button").forEach((button) => {
+  button.addEventListener("click", async () => {
+    if (!(button instanceof HTMLButtonElement)) return;
+
+    const targetId = button.dataset.target;
+    const promptText = document.getElementById(targetId ?? "");
+
+    if (!promptText) return;
+
+    try {
+      await navigator.clipboard.writeText(promptText.textContent ?? "");
+
+      button.textContent = "COPIED!";
+
+      setTimeout(() => {
+        button.textContent = "COPY PROMPT";
+      }, 2000);
+
+    } catch {
+      button.textContent = "COPY FAILED";
+    }
+  });
+});
+
+      document.addEventListener("contextmenu", (event) => {
+        if (event.target instanceof HTMLImageElement) {
+          event.preventDefault();
+        }
+      });
+
+      document.addEventListener("dragstart", (event) => {
+        if (event.target instanceof HTMLImageElement) {
+          event.preventDefault();
+        }
+      });
+    </script>
+  </body>
+</html>
+
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background: #e9dfcd;
+    color: #392c20;
+    font-family: Georgia, serif;
+  }
+
+  .archive {
+    width: min(100% - 48px, 1100px);
+    margin: 0 auto;
+    padding: 32px 0;
+  }
+
+  .top-nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #bca789;
+    color: #947b5d;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .back-link:hover,
+  footer a:hover {
+    color: #a17d50;
+  }
+
+  .page-header {
+    padding: 65px 0;
+    text-align: center;
+    border-bottom: 1px solid #bca789;
+  }
+
+  .page-header p,
+  .section-label {
+    color: #94734e;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+  }
+
+  h1 {
+    margin: 18px 0;
+    font-size: clamp(36px, 5vw, 56px);
+    font-weight: 400;
+    letter-spacing: 0.08em;
+  }
+
+  .ornament {
+    color: #a17d50;
+    font-size: 13px;
+    letter-spacing: 0.3em;
+  }
+
+  .character-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 55px;
+    padding: 60px 0;
+  }
+
+  .portrait {
+    align-self: start;
+    padding: 12px;
+    border: 1px solid #c9b89d;
+    background: rgba(255, 250, 240, 0.4);
+  }
+
+  .portrait img {
+    display: block;
+    width: 100%;
+    height: auto;
+    -webkit-user-drag: none;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
+  .portrait p {
+    margin: 15px 0 5px;
+    text-align: center;
+    color: #947b5d;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+  }
+
+  h2 {
+    margin: 12px 0 28px;
+    font-size: 28px;
+    font-weight: 400;
+  }
+
+  .profile-list {
+    border-top: 1px solid #c9b89d;
+  }
+
+  .profile-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 17px 0;
+    border-bottom: 1px solid #c9b89d;
+  }
+
+  .profile-row span {
+    color: #94734e;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+  }
+
+  .profile-row strong {
+    font-size: 14px;
+    font-weight: 400;
+    text-align: right;
+  }
+
+  .description {
+    margin-top: 45px;
+  }
+
+  .description > p:last-child {
+    line-height: 1.9;
+    white-space: pre-line;
+    font-size: 14px;
+  }
+
+  .prompt-section {
+    padding: 45px 0 70px;
+    border-top: 1px solid #bca789;
+  }
+.prompt-block {
+  margin-top: 25px;
+}
+
+.prompt-block + .prompt-block {
+  margin-top: 40px;
+  padding-top: 25px;
+  border-top: 1px solid #c9b89d;
+}
+  .prompt-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .prompt-heading h2 {
+    margin-bottom: 20px;
+  }
+
+  button {
+    padding: 11px 17px;
+    border: 1px solid #a88c69;
+    background: transparent;
+    color: #765b40;
+    font-family: Georgia, serif;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background: #765b40;
+    color: #fff4df;
+  }
+
+  pre {
+    margin: 0;
+    padding: 25px;
+    border: 1px solid #c9b89d;
+    background: rgba(255, 250, 240, 0.45);
+    font-family: monospace;
+    font-size: 12px;
+    line-height: 1.8;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    user-select: text;
+  }
+
+  footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    padding-top: 18px;
+    border-top: 1px solid #bca789;
+    color: #947b5d;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+  }
+
+  @media (max-width: 700px) {
+    .archive {
+      width: calc(100% - 32px);
+    }
+
+    .character-layout {
+      grid-template-columns: 1fr;
+      gap: 35px;
+      padding: 35px 0;
+    }
+
+    .page-header {
+      padding: 45px 0;
+    }
+
+    .prompt-heading {
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+  }
+  ruby {
+  ruby-position: over;
+  ruby-align: center;
+}
+
+rt {
+  font-size: 0.35em;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  color: #94734e;
+}
+</style>

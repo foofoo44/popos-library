@@ -1,0 +1,67 @@
+
+---
+import Entrance from "../components/Entrance.astro";
+
+const title = "THE PRIVATE ARCHIVE";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <Entrance />
+  </body>
+</html>
+
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background: #30251f;
+    color: #f5f0e6;
+    font-family: Georgia, serif;
+  }
+
+  main {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 32px;
+  }
+
+  .eyebrow {
+    color: #b69b78;
+    letter-spacing: 0.3em;
+    font-size: 11px;
+  }
+
+  h1 {
+    font-size: clamp(32px, 6vw, 64px);
+    letter-spacing: 0.08em;
+    margin: 16px 0;
+  }
+
+  .description {
+    color: #e5d9c7;
+    letter-spacing: 0.15em;
+    font-size: 12px;
+  }
+
+  .instruction {
+    margin-top: 60px;
+    color: #b69b78;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+  }
+</style>

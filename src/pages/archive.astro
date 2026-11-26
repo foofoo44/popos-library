@@ -1,0 +1,386 @@
+
+---
+import { characters } from "../data/characters";
+
+const title = "THE PRIVATE ARCHIVE";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+  </head>
+
+  <body>
+    <main class="archive">
+
+      <nav class="top-nav">
+        <a href="/oc-archive/" class="back-link">← BACK TO ENTRANCE</a>
+        <span class="archive-label">PRIVATE COLLECTION · 001</span>
+      </nav>
+
+      <header class="archive-header">
+        <p class="eyebrow">WELCOME TO THE POPO'S LIBRARY</p>
+
+        <h1>POPO'S CHARACTER</h1>
+
+        <p class="subtitle">
+          A COLLECTION OF ORIGINAL CHARACTERS
+        </p>
+
+        <div class="ornament">
+          <span></span>
+          <span class="ornament-symbol">✦</span>
+          <span></span>
+        </div>
+      </header>
+
+      <section class="collection">
+
+        <div class="section-heading">
+          <div>
+            <p class="section-label">THE COLLECTION</p>
+            <h2>Characters</h2>
+          </div>
+
+          <span class="record-count">{String(characters.length).padStart(2, "0")} RECORDS</span>
+        </div>
+
+
+
+<div class="character-grid">
+
+  {characters.map((character) => (
+    <a href={`/oc-archive/characters/${character.id}/`} class="character-card">
+
+      <div class="character-image">
+        <img
+          src={character.image}
+          alt={character.name}
+          draggable="false"
+        />
+        <span class="image-number">NO. {character.number}</span>
+      </div>
+
+      <div class="character-info">
+        <h3>
+  {character.furigana ? (
+    <ruby>
+      {character.name}
+      <rt>{character.furigana}</rt>
+    </ruby>
+  ) : character.name}
+</h3>
+        {character.category && <p>{character.category}</p>}
+      </div>
+
+    </a>
+  ))}
+
+</div>
+
+
+      </section>
+
+      <footer>
+        <span>THE PRIVATE ARCHIVE</span>
+        <span>EST. 2026</span>
+      </footer>
+
+    </main>
+
+<script>
+  // 이미지 우클릭 및 드래그 방지
+  document.addEventListener("contextmenu", (event) => {
+    if (event.target instanceof HTMLImageElement) {
+      event.preventDefault();
+    }
+  });
+
+  document.addEventListener("dragstart", (event) => {
+    if (event.target instanceof HTMLImageElement) {
+      event.preventDefault();
+    }
+  });
+</script>
+
+  </body>
+</html>
+
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background: #e9dfcd;
+    color: #392c20;
+    font-family: Georgia, serif;
+  }
+
+  .archive {
+    width: min(100% - 48px, 1200px);
+    margin: 0 auto;
+    padding: 32px 0 24px;
+  }
+
+  .top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #bca789;
+  }
+
+  .back-link {
+    color: #765b40;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-decoration: none;
+  }
+
+  .archive-label {
+    color: #947b5d;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+  }
+
+  .archive-header {
+    text-align: center;
+    padding: 85px 0 65px;
+    border-bottom: 1px solid #bca789;
+  }
+
+  .eyebrow {
+    color: #94734e;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+  }
+
+  h1 {
+    margin: 20px 0 14px;
+    font-size: clamp(30px, 5vw, 54px);
+    font-weight: 400;
+    letter-spacing: 0.12em;
+  }
+
+  .subtitle {
+    color: #80694f;
+    font-size: 10px;
+    letter-spacing: 0.22em;
+  }
+
+  .ornament {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 30px;
+  }
+
+  .ornament span:not(.ornament-symbol) {
+    width: 55px;
+    height: 1px;
+    background: #bca789;
+  }
+
+  .ornament-symbol {
+    color: #a17d50;
+    font-size: 13px;
+  }
+
+  .collection {
+    padding: 55px 0 80px;
+  }
+
+  .section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #c9b89d;
+  }
+
+  .section-label {
+    margin: 0 0 8px;
+    color: #94734e;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+  }
+
+  h2 {
+    margin: 0;
+    font-size: 27px;
+    font-weight: 400;
+  }
+
+  .record-count {
+    color: #947b5d;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+  }
+
+  .empty-state {
+    padding: 100px 20px;
+    text-align: center;
+  }
+
+  .empty-icon {
+    margin-bottom: 20px;
+    color: #aa8d65;
+    font-size: 30px;
+  }
+
+  .empty-title {
+    color: #765b40;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+  }
+
+  .empty-description {
+    margin-top: 12px;
+    color: #9b876d;
+    font-size: 12px;
+  }
+
+  footer {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 18px;
+    border-top: 1px solid #bca789;
+    color: #947b5d;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+  }
+
+.character-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+  padding-top: 30px;
+}
+
+.character-card {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  border: 1px solid #c9b89d;
+  padding: 10px;
+  background: rgba(255, 250, 240, 0.35);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.character-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(70, 48, 28, 0.12);
+}
+
+.character-image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  background: #d9cbb4;
+}
+
+.character-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.image-number {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  padding: 5px 8px;
+  color: #fff4df;
+  background: rgba(48, 37, 29, 0.7);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+}
+
+.character-info {
+  padding: 15px 5px 8px;
+  text-align: center;
+}
+
+.character-info h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+}
+
+.character-info p {
+  margin: 8px 0 0;
+  color: #947b5d;
+  font-size: 9px;
+  letter-spacing: 0.15em;
+}
+
+  @media (max-width: 600px) {
+.character-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+    .archive-header {
+      padding: 65px 0 50px;
+    }
+
+    .collection {
+      padding-top: 40px;
+    }
+
+    .empty-state {
+      padding: 75px 10px;
+    }
+  }
+
+img {
+  -webkit-user-drag: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+ruby {
+  ruby-position: over;
+  ruby-align: center;
+}
+
+rt {
+  font-size: 0.35em;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  color: #94734e;
+}
+html {
+  background: #21170f;
+}
+
+body {
+  animation: archiveFadeIn 1.2s ease-in-out both;
+}
+
+@keyframes archiveFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body {
+    animation: none;
+  }
+}
+</style>

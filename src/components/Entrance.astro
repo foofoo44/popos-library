@@ -608,18 +608,35 @@
 </script>
 
 <script>
-  const book = document.querySelector("#archiveBook");
-  const scene = document.querySelector(".scene");
-  const cover = document.querySelector("#transitionCover");
+  import { navigate } from "astro:transitions/client";
 
-  book?.addEventListener("click", () => {
+  document.addEventListener("click", (event) => {
+    if (!(event.target instanceof Element)) return;
+    if (!event.target.closest("#archiveBook")) return;
+
+    const scene = document.querySelector(".scene");
+    const cover = document.querySelector("#transitionCover");
+
+    const bookSound =
+      document.querySelector<HTMLAudioElement>("#site-book-sound");
+
     if (scene?.classList.contains("opening")) return;
 
+    // 책장 넘김 효과음
+    if (bookSound) {
+      bookSound.volume = 0.4;
+      bookSound.currentTime = 0;
+      bookSound.play().catch(() => {});
+    }
+
+    // 기존 입장 애니메이션
     scene?.classList.add("opening");
     cover?.classList.add("visible");
 
-window.setTimeout(() => {
-  window.location.href = `${import.meta.env.BASE_URL.replace(/\/$/, "")}/archive/`;
-}, 1600);
+    window.setTimeout(() => {
+      navigate(
+        `${import.meta.env.BASE_URL.replace(/\/$/, "")}/archive/`
+      );
+    }, 1600);
   });
 </script>

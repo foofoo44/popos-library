@@ -1,6 +1,8 @@
 
 ---
 import Entrance from "../components/Entrance.astro";
+import { ClientRouter } from "astro:transitions";
+import AudioPlayer from "../components/AudioPlayer.astro";
 
 const title = "THE PRIVATE ARCHIVE";
 ---
@@ -11,10 +13,12 @@ const title = "THE PRIVATE ARCHIVE";
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
+<ClientRouter />
   </head>
-  <body>
-    <Entrance />
-  </body>
+<body>
+  <Entrance />
+  <AudioPlayer />
+</body>
 </html>
 
 <style>

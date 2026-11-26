@@ -1,6 +1,8 @@
 
 ---
 import { characters } from "../../data/characters";
+import { ClientRouter } from "astro:transitions";
+import AudioPlayer from "../../components/AudioPlayer.astro";
 
 export function getStaticPaths() {
   return characters.map((character) => ({
@@ -18,6 +20,7 @@ const { character } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{character.name} | THE PRIVATE ARCHIVE</title>
+<ClientRouter />
   </head>
 
   <body>
@@ -115,11 +118,12 @@ const { character } = Astro.props;
       </footer>
 
     </main>
+<script>
+  document.addEventListener("click", async (event) => {
+    if (!(event.target instanceof Element)) return;
 
-    <script>
+    const button = event.target.closest(".copy-button");
 
-document.querySelectorAll(".copy-button").forEach((button) => {
-  button.addEventListener("click", async () => {
     if (!(button instanceof HTMLButtonElement)) return;
 
     const targetId = button.dataset.target;
@@ -140,21 +144,21 @@ document.querySelectorAll(".copy-button").forEach((button) => {
       button.textContent = "COPY FAILED";
     }
   });
-});
 
-      document.addEventListener("contextmenu", (event) => {
-        if (event.target instanceof HTMLImageElement) {
-          event.preventDefault();
-        }
-      });
+  document.addEventListener("contextmenu", (event) => {
+    if (event.target instanceof HTMLImageElement) {
+      event.preventDefault();
+    }
+  });
 
-      document.addEventListener("dragstart", (event) => {
-        if (event.target instanceof HTMLImageElement) {
-          event.preventDefault();
-        }
-      });
-    </script>
-  </body>
+  document.addEventListener("dragstart", (event) => {
+    if (event.target instanceof HTMLImageElement) {
+      event.preventDefault();
+    }
+  });
+</script>
+  <AudioPlayer />
+</body>
 </html>
 
 <style>

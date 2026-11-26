@@ -1,0 +1,149 @@
+---
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+---
+
+<div id="site-audio-player" transition:persist="site-audio-player">
+
+  <audio
+    id="site-bgm"
+    src={`${base}/audio/bgm.mp3`}
+    preload="auto"
+    loop
+  ></audio>
+
+  <audio
+    id="site-book-sound"
+    src={`${base}/audio/book-click.mp3`}
+    preload="auto"
+  ></audio>
+
+  <button
+    id="music-toggle"
+    type="button"
+    aria-label="Play or pause background music"
+    aria-pressed="false"
+    title="Music ON / OFF"
+  >
+    <span id="music-icon">♫</span>
+  </button>
+
+</div>
+
+<script>
+  const MUSIC_VOLUME = 0.1;
+  let musicEnabled = true;
+
+  function getBgm() {
+    return document.querySelector<HTMLAudioElement>("#site-bgm");
+  }
+
+  function updateMusicButton() {
+    const bgm = getBgm();
+    const button =
+      document.querySelector<HTMLButtonElement>("#music-toggle");
+
+    if (!bgm || !button) return;
+
+    button.classList.toggle("playing", !bgm.paused);
+    button.setAttribute("aria-pressed", String(!bgm.paused));
+  }
+
+  async function startBackgroundMusic() {
+    const bgm = getBgm();
+
+    if (!bgm || !musicEnabled || !bgm.paused) return;
+
+    bgm.volume = MUSIC_VOLUME;
+
+    try {
+      await bgm.play();
+      updateMusicButton();
+    } catch {
+      console.warn("Music playback failed.");
+    }
+  }
+
+  document.addEventListener("click", (event) => {
+    if (!(event.target instanceof Element)) return;
+
+    const bgm = getBgm();
+    if (!bgm) return;
+
+    // 입장 페이지의 책 클릭
+    if (event.target.closest("#archiveBook")) {
+      startBackgroundMusic();
+      return;
+    }
+
+    // 음악 ON / OFF 버튼
+    if (event.target.closest("#music-toggle")) {
+      if (bgm.paused) {
+        musicEnabled = true;
+        startBackgroundMusic();
+      } else {
+        musicEnabled = false;
+        bgm.pause();
+      }
+
+      updateMusicButton();
+    }
+  });
+
+  document.addEventListener("play", updateMusicButton, true);
+  document.addEventListener("pause", updateMusicButton, true);
+  document.addEventListener("astro:page-load", updateMusicButton);
+</script>
+
+<style>
+  #music-toggle {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 9999;
+
+    width: 44px;
+    height: 44px;
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #b69b78;
+    border-radius: 50%;
+
+    background: rgba(48, 37, 29, 0.85);
+    color: #b69b78;
+
+    font-family: Georgia, serif;
+    font-size: 22px;
+
+    cursor: pointer;
+    backdrop-filter: blur(8px);
+
+    opacity: 0.65;
+    transition: all 0.3s ease;
+  }
+
+  #music-toggle:hover {
+    opacity: 1;
+    box-shadow: 0 0 15px rgba(182, 155, 120, 0.3);
+  }
+
+  #music-toggle.playing {
+    opacity: 1;
+    color: #f5dfb5;
+    border-color: #d9bd8b;
+    box-shadow: 0 0 12px rgba(217, 189, 139, 0.25);
+  }
+
+  @media (max-width: 600px) {
+    #music-toggle {
+      right: 16px;
+      bottom: 16px;
+      width: 38px;
+      height: 38px;
+      font-size: 19px;
+    }
+  }
+</style>

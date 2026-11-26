@@ -3,7 +3,7 @@ export const characters = [
   {
     id: "popo-female",
     name: "ポポ(女)",
-    image: "/popos-library/images/characters/hana.webp",
+    image: "/images/characters/hana.webp",
     number: "001",
     category: "代理",
     description: "ポポの代理",
@@ -30,7 +30,7 @@ delicate masculine appearance, soft androgynous beauty, relaxed casual styling, 
   {
     id: "popo-male",
     name: "ポポ(男)",
-    image: "/popos-library/images/characters/dul.webp",
+    image: "/images/characters/dul.webp",
     number: "002",
     category: "代理",
     description: "ポポの代理",
@@ -60,7 +60,7 @@ delicate masculine appearance, soft androgynous beauty, relaxed casual styling, 
     id: "tsumugi",
     name: "紡",
     furigana: "つむぎ",
-    image: "/popos-library/images/characters/tsumugi.webp",
+    image: "/images/characters/tsumugi.webp",
     number: "003",
     category: "",
     description: `身長：145cm
@@ -93,7 +93,7 @@ white moth wings, delicate feathery wings, pale cream color palette,`,
 {
     id: "aron",
     name: "アロン",
-    image: "/popos-library/images/characters/aron.webp",
+    image: "/images/characters/aron.webp",
     number: "004",
     category: "",
     description: `身長：301cm
@@ -126,7 +126,7 @@ glowing emerald green eyes, mysterious ethereal green aura within the eyes, lumi
 {
     id: "goth",
     name: "ゴス",
-    image: "/popos-library/images/characters/goth.webp",
+    image: "/images/characters/goth.webp",
     number: "005",
     category: "",
     description: `身長：178cm
@@ -152,7 +152,7 @@ silver-rimmed sunglasses, extravagant ear piercings, multiple silver earrings,`,
 {
     id: "marine",
     name: "マリネ",
-    image: "/popos-library/images/characters/marine.webp",
+    image: "/images/characters/marine.webp",
     number: "006",
     category: "",
     description: `人間身長：158cm
@@ -182,7 +182,7 @@ delicate, uncanny, elegant, melancholic, dark fairytale atmosphere,`,
 {
     id: "onett",
     name: "オネット",
-    image: "/popos-library/images/characters/onett.webp",
+    image: "/images/characters/onett.webp",
     number: "007",
     category: "",
     description: `人間身長：181cm
@@ -210,7 +210,7 @@ thin black puppet strings emerging from hair, tangled puppet strings, small meta
 {
     id: "Lucien",
     name: "ルシアン",
-    image: "/popos-library/images/characters/Lucien.webp",
+    image: "/images/characters/Lucien.webp",
     number: "008",
     category: "",
     description: `(怪し)人形師
@@ -242,7 +242,7 @@ pale warm skin tone, natural skin texture,`,
 {
     id: "bori",
     name: "ボリ",
-    image: "/popos-library/images/characters/bori.webp",
+    image: "/images/characters/bori.webp",
     number: "009",
     category: "",
     description: `身長：130cm
@@ -271,7 +271,7 @@ gentle woodland atmosphere, whimsical natural charm,`,
 {
     id: "myuu",
     name: "ミュウ",
-    image: "/popos-library/images/characters/myuu.webp",
+    image: "/images/characters/myuu.webp",
     number: "010",
     category: "",
     description: `身長：167cm
@@ -313,7 +313,7 @@ surreal deep sea atmosphere,`,
     id: "rei",
     name: "黒瀬 怜",
     furigana: "くろせ　　    れい",
-    image: "/popos-library/images/characters/rei.webp",
+    image: "/images/characters/rei.webp",
     number: "011",
     category: "",
     description: `身長：171cm
@@ -348,7 +348,7 @@ pair of small black bat wings attached to both sides of the waist, symmetrical m
 {
     id: "rak",
     name: "ラク",
-    image: "/popos-library/images/characters/rak.webp",
+    image: "/images/characters/rak.webp",
     number: "012",
     category: "",
     description: `身長：189cm`,
@@ -383,7 +383,7 @@ thick black leather dog collar, metallic buckle, heavy metal chain attached to t
 {
     id: "runa",
     name: "ルナ",
-    image: "/popos-library/images/characters/runa.webp",
+    image: "/images/characters/runa.webp",
     number: "013",
     category: "",
     description: `身長：167cm`,
@@ -418,7 +418,7 @@ large futuristic mechanical backpack, back-mounted electronic apparatus, white a
 {
     id: "aurora",
     name: "オーロラ",
-    image: "/popos-library/images/characters/aurora.webp",
+    image: "/images/characters/aurora.webp",
     number: "014",
     category: "",
     description: `身長：168cm
@@ -457,7 +457,7 @@ layered rings,`,
     id: "touma",
     name: "冬真",
     furigana: "とうま",
-    image: "/popos-library/images/characters/touma.webp",
+    image: "/images/characters/touma.webp",
     number: "015",
     category: "",
     description: `身長：182cm
@@ -495,7 +495,7 @@ layered rings,`,
 {
     id: "yhm",
     name: "양해민 (ヤン・ヘミン)",
-    image: "/popos-library/images/characters/yhm.webp",
+    image: "/images/characters/yhm.webp",
     number: "016",
     category: "",
     description: `身長：185cm
@@ -525,7 +525,7 @@ geek chic glasses, thin metal rectangular eyeglass frames, sophisticated intelle
 {
     id: "ichigo",
     name: "イチゴ",
-    image: "/popos-library/images/characters/ichigo.webp",
+    image: "/images/characters/ichigo.webp",
     number: "017",
     category: "",
     description: `身長：162cm
@@ -549,7 +549,7 @@ warm milky pink palette, low saturation, simplified cel shading, clean bold line
 {
     id: "momo",
     name: "モモ",
-    image: "/popos-library/images/characters/momo.webp",
+    image: "/images/characters/momo.webp",
     number: "018",
     category: "",
     description: `身長：154cm
@@ -574,7 +574,7 @@ Face: 1.3::large round puppy eyes, strongly downturned outer eye corners::, roun
     id: "dk",
     name: "蓮司",
     furigana: "れんじ",
-    image: "/popos-library/images/characters/dk.webp",
+    image: "/images/characters/dk.webp",
     number: "019",
     category: "",
     description: `身長：190cm`,
@@ -609,7 +609,7 @@ laurel wreath adorning both sides of the head, delicate golden laurel leaves,`,
 {
     id: "rina",
     name: "リナ",
-    image: "/popos-library/images/characters/rina.webp",
+    image: "/images/characters/rina.webp",
     number: "020",
     category: "",
     description: `身長：160cm
@@ -638,7 +638,7 @@ soft skin shading, refined anime lineart, soft cel shading, delicate highlights,
     id: "ks",
     name: "竜司",
     furigana: "りゅうじ",
-    image: "/popos-library/images/characters/ks.webp",
+    image: "/images/characters/ks.webp",
     number: "021",
     category: "",
     description: `身長：179cm`,
@@ -671,7 +671,7 @@ micro-sized tongue piercing, very small stud proportional to the tongue,`,
 {
     id: "mint",
     name: "ミント",
-    image: "/popos-library/images/characters/mint.webp",
+    image: "/images/characters/mint.webp",
     number: "022",
     category: "",
     description: `身長：151cm
@@ -702,7 +702,7 @@ large pointed cat ears, one upright cat ear, one drooping cat ear, white inner e
     id: "yulin",
     name: "予琳",
     furigana: "よりん",
-    image: "/popos-library/images/characters/yulin.webp",
+    image: "/images/characters/yulin.webp",
     number: "023",
     category: "",
     description: `身長：177cm
@@ -741,7 +741,7 @@ turquoise high-heeled shoes, ankle strap heels, delicate ankle ornaments,`,
     id: "yuhwa",
     name: "予华",
     furigana: "よふぁ",
-    image: "/popos-library/images/characters/yuhwa.webp",
+    image: "/images/characters/yuhwa.webp",
     number: "024",
     category: "",
     description: `身長：175cm
@@ -786,7 +786,7 @@ elegant pointed high heels, dark muted plum shoes, jade-green ankle straps, smal
     id: "kb",
     name: "金蛇",
     furigana: "きんじゃ",
-    image: "/popos-library/images/characters/kb.webp",
+    image: "/images/characters/kb.webp",
     number: "025",
     category: "【ペアあり】",
     description: `身長：178cm`,
@@ -826,7 +826,7 @@ multiple ear piercings, multiple black metal earrings, multiple silver ear cuffs
     id: "siro",
     name: "白",
     furigana: "しろ",
-    image: "/popos-library/images/characters/siro.webp",
+    image: "/images/characters/siro.webp",
     number: "026",
     category: "【ペアあり】",
     description: `身長：162cm`,
@@ -855,7 +855,7 @@ long black cow tail, black tuft at tail tip,`,
 {
     id: "ian",
     name: "イアン",
-    image: "/popos-library/images/characters/ian.webp",
+    image: "/images/characters/ian.webp",
     number: "027",
     category: "【ペアあり】",
     description: `身長：188cm
@@ -888,7 +888,7 @@ soft fluffy white floppy dog ears with folded tips, multiple silver ear piercing
     id: "kw",
     name: "熊雄",
     furigana: "くまお",
-    image: "/popos-library/images/characters/kw.webp",
+    image: "/images/characters/kw.webp",
     number: "028",
     category: "【ペアあり】",
     description: `身長：193cm

@@ -4,7 +4,6 @@ export const characters = [
     id: "popo-female",
     name: "ポポ(女)",
     image: "/images/characters/hana.webp",
-    number: "001",
     category: "代理",
     description: "ポポの代理",
 
@@ -31,7 +30,6 @@ delicate masculine appearance, soft androgynous beauty, relaxed casual styling, 
     id: "popo-male",
     name: "ポポ(男)",
     image: "/images/characters/dul.webp",
-    number: "002",
     category: "代理",
     description: "ポポの代理",
 
@@ -60,7 +58,6 @@ delicate masculine appearance, soft androgynous beauty, relaxed casual styling, 
     id: "tomi_m",
     name: "トミ(男)",
     image: "/images/characters/tomi_m.webp",
-    number: "003",
     category: "代理",
     description: "ポポの2人目の代理",
 
@@ -89,7 +86,6 @@ thick cross-shaped scar on under cheek, thin eyebrows, fine upper eyelashes, no 
     id: "tomi_w",
     name: "トミ(女)",
     image: "/images/characters/tomi_w.webp",
-    number: "004",
     category: "代理",
     description: "ポポの2人目の代理",
 
@@ -113,13 +109,43 @@ thick cross-shaped scar on under cheek, thin eyebrows, fine upper eyelashes, no 
     outfitPrompt: `industrial work jumpsuit, jumpsuit worn halfway down, upper half of jumpsuit tied around waist, fitted sleeveless tank top, military combat boots`,
     negativePrompt: ``,
   },
+{
+    id: "nagi",
+    name: "凪",
+    furigana: "なぎ",
+    image: "/images/characters/nagi.webp",
+    category: "",
+    description: `身長：178cm
+私立南華夜部恵学園の生徒`,
 
+    profile: [
+      { label: "NAME", value: "凪" },
+      { label: "AGE", value: "17" },
+      { label: "GENDER", value: "男" },
+      { label: "SPECIES", value: "水槽人外" },
+    ],
+
+    prompt: `male student, fantasy humanoid, slender physique, mysterious beauty,
+
+2::transparent glass body, hollow glass anatomy, aquarium-like body filled with clear water, visible waterline inside body, small goldfish and colorful guppies swimming inside body, floating air bubbles::,
+
+1.5::transparent glass skin, smooth curved glass surfaces, refracted light, iridescent glass reflections, aquatic caustics::,
+
+1.5::deep indigo hair, asymmetrical layered short hair, long side bangs covering one eye, iridescent underwater caustic hair highlights::,
+
+metallic golden eyes, narrow sleepy eyes, white eyelashes, expressionless face,
+
+1.5::small transparent air bubbles gently escaping from mouth while speaking::,
+
+golden tassel earring,`,
+    outfitPrompt: `1.5::black gakuran, unbuttoned school uniform jacket, standing collar, golden buttons::, black school trousers, black loafers, `,
+    negativePrompt: ``,
+},
   {
     id: "tsumugi",
     name: "紡",
     furigana: "つむぎ",
     image: "/images/characters/tsumugi.webp",
-    number: "005",
     category: "",
     description: `身長：145cm
     住処：桑の森`,
@@ -152,7 +178,6 @@ white moth wings, delicate feathery wings, pale cream color palette,`,
     id: "aron",
     name: "アロン",
     image: "/images/characters/aron.webp",
-    number: "006",
     category: "",
     description: `身長：301cm
     住処：神秘の森`,
@@ -185,7 +210,6 @@ glowing emerald green eyes, mysterious ethereal green aura within the eyes, lumi
     id: "goth",
     name: "ゴス",
     image: "/images/characters/goth.webp",
-    number: "007",
     category: "",
     description: `身長：178cm
     趣味：ツーリング`,
@@ -211,7 +235,6 @@ silver-rimmed sunglasses, extravagant ear piercings, multiple silver earrings,`,
     id: "marine",
     name: "マリネ",
     image: "/images/characters/marine.webp",
-    number: "008",
     category: "",
     description: `人間身長：158cm
     人形身長：18cm`,
@@ -241,7 +264,6 @@ delicate, uncanny, elegant, melancholic, dark fairytale atmosphere,`,
     id: "onett",
     name: "オネット",
     image: "/images/characters/onett.webp",
-    number: "009",
     category: "",
     description: `人間身長：181cm
     人形身長：21cm`,
@@ -269,7 +291,6 @@ thin black puppet strings emerging from hair, tangled puppet strings, small meta
     id: "Lucien",
     name: "ルシアン",
     image: "/images/characters/Lucien.webp",
-    number: "010",
     category: "",
     description: `(怪し)人形師
 身長：183cm`,
@@ -301,7 +322,6 @@ pale warm skin tone, natural skin texture,`,
     id: "bori",
     name: "ボリ",
     image: "/images/characters/bori.webp",
-    number: "011",
     category: "",
     description: `身長：130cm
 住処：田舎`,
@@ -330,7 +350,6 @@ gentle woodland atmosphere, whimsical natural charm,`,
     id: "myuu",
     name: "ミュウ",
     image: "/images/characters/myuu.webp",
-    number: "012",
     category: "",
     description: `身長：167cm
 住処：深海
@@ -372,7 +391,6 @@ surreal deep sea atmosphere,`,
     name: "黒瀬 怜",
     furigana: "くろせ　　    れい",
     image: "/images/characters/rei.webp",
-    number: "013",
     category: "",
     description: `身長：171cm
 半人半神（魔神）`,
@@ -407,7 +425,6 @@ pair of small black bat wings attached to both sides of the waist, symmetrical m
     id: "rak",
     name: "ラク",
     image: "/images/characters/rak.webp",
-    number: "014",
     category: "",
     description: `身長：189cm`,
 
@@ -442,7 +459,6 @@ thick black leather dog collar, metallic buckle, heavy metal chain attached to t
     id: "runa",
     name: "ルナ",
     image: "/images/characters/runa.webp",
-    number: "015",
     category: "",
     description: `身長：167cm`,
 
@@ -477,7 +493,6 @@ large futuristic mechanical backpack, back-mounted electronic apparatus, white a
     id: "aurora",
     name: "オーロラ",
     image: "/images/characters/aurora.webp",
-    number: "016",
     category: "",
     description: `身長：168cm
 髪色ランダム`,
@@ -516,7 +531,6 @@ layered rings,`,
     name: "冬真",
     furigana: "とうま",
     image: "/images/characters/touma.webp",
-    number: "017",
     category: "",
     description: `身長：182cm
 退魔師`,
@@ -554,7 +568,6 @@ layered rings,`,
     id: "yhm",
     name: "양해민 (ヤン・ヘミン)",
     image: "/images/characters/yhm.webp",
-    number: "018",
     category: "",
     description: `身長：185cm
 道士`,
@@ -584,7 +597,6 @@ geek chic glasses, thin metal rectangular eyeglass frames, sophisticated intelle
     id: "ichigo",
     name: "イチゴ",
     image: "/images/characters/ichigo.webp",
-    number: "019",
     category: "",
     description: `身長：162cm
     いちごケーキ専門店でアルバイト`,
@@ -608,7 +620,6 @@ warm milky pink palette, low saturation, simplified cel shading, clean bold line
     id: "momo",
     name: "モモ",
     image: "/images/characters/momo.webp",
-    number: "020",
     category: "",
     description: `身長：154cm
     大学生`,
@@ -633,7 +644,6 @@ Face: 1.3::large round puppy eyes, strongly downturned outer eye corners::, roun
     name: "蓮司",
     furigana: "れんじ",
     image: "/images/characters/dk.webp",
-    number: "021",
     category: "",
     description: `身長：190cm`,
 
@@ -668,7 +678,6 @@ laurel wreath adorning both sides of the head, delicate golden laurel leaves,`,
     id: "rina",
     name: "リナ",
     image: "/images/characters/rina.webp",
-    number: "022",
     category: "",
     description: `身長：160cm
 大学生`,
@@ -697,7 +706,6 @@ soft skin shading, refined anime lineart, soft cel shading, delicate highlights,
     name: "竜司",
     furigana: "りゅうじ",
     image: "/images/characters/ks.webp",
-    number: "023",
     category: "",
     description: `身長：179cm`,
 
@@ -730,7 +738,6 @@ micro-sized tongue piercing, very small stud proportional to the tongue,`,
     id: "mint",
     name: "ミント",
     image: "/images/characters/mint.webp",
-    number: "024",
     category: "",
     description: `身長：151cm
 モデル`,
@@ -761,7 +768,6 @@ large pointed cat ears, one upright cat ear, one drooping cat ear, white inner e
     name: "予琳",
     furigana: "よりん",
     image: "/images/characters/yulin.webp",
-    number: "025",
     category: "",
     description: `身長：177cm
 公主(長女)`,
@@ -800,7 +806,6 @@ turquoise high-heeled shoes, ankle strap heels, delicate ankle ornaments,`,
     name: "予华",
     furigana: "よふぁ",
     image: "/images/characters/yuhwa.webp",
-    number: "026",
     category: "",
     description: `身長：175cm
 公主(次女)`,
@@ -845,7 +850,6 @@ elegant pointed high heels, dark muted plum shoes, jade-green ankle straps, smal
     name: "金蛇",
     furigana: "きんじゃ",
     image: "/images/characters/kb.webp",
-    number: "027",
     category: "【ペアあり】",
     description: `身長：178cm`,
 
@@ -885,7 +889,6 @@ multiple ear piercings, multiple black metal earrings, multiple silver ear cuffs
     name: "白",
     furigana: "しろ",
     image: "/images/characters/siro.webp",
-    number: "028",
     category: "【ペアあり】",
     description: `身長：162cm`,
 
@@ -914,7 +917,6 @@ long black cow tail, black tuft at tail tip,`,
     id: "ian",
     name: "イアン",
     image: "/images/characters/ian.webp",
-    number: "029",
     category: "【ペアあり】",
     description: `身長：188cm
 牧場の管理人`,
@@ -947,7 +949,6 @@ soft fluffy white floppy dog ears with folded tips, multiple silver ear piercing
     name: "熊雄",
     furigana: "くまお",
     image: "/images/characters/kw.webp",
-    number: "030",
     category: "【ペアあり】",
     description: `身長：193cm
 元軍人、殺し屋`,
@@ -971,37 +972,8 @@ soft fluffy white floppy dog ears with folded tips, multiple silver ear piercing
     outfitPrompt: `2::black tailored coat, dark turtleneck, black clothing, black tailored trousers, black leather dress shoes, professional hitman outfit::,`,
     negativePrompt: `prominent mouth corner muscles, exaggerated mouth corner definition, deep creases around mouth corners, harsh shadows around mouth, deep nasolabial folds, marionette lines,`,
 },
-{
-    id: "nagi",
-    name: "凪",
-    furigana: "なぎ",
-    image: "/images/characters/nagi.webp",
-    number: "031",
-    category: "",
-    description: `身長：178cm
-私立南華夜部恵学園の生徒`,
 
-    profile: [
-      { label: "NAME", value: "凪" },
-      { label: "AGE", value: "17" },
-      { label: "GENDER", value: "男" },
-      { label: "SPECIES", value: "水槽人外" },
-    ],
-
-    prompt: `male student, fantasy humanoid, slender physique, mysterious beauty,
-
-2::transparent glass body, hollow glass anatomy, aquarium-like body filled with clear water, visible waterline inside body, small goldfish and colorful guppies swimming inside body, floating air bubbles::,
-
-1.5::transparent glass skin, smooth curved glass surfaces, refracted light, iridescent glass reflections, aquatic caustics::,
-
-1.5::deep indigo hair, asymmetrical layered short hair, long side bangs covering one eye, iridescent underwater caustic hair highlights::,
-
-metallic golden eyes, narrow sleepy eyes, white eyelashes, expressionless face,
-
-1.5::small transparent air bubbles gently escaping from mouth while speaking::,
-
-golden tassel earring,`,
-    outfitPrompt: `1.5::black gakuran, unbuttoned school uniform jacket, standing collar, golden buttons::, black school trousers, black loafers, `,
-    negativePrompt: ``,
-},
-];
+].map((character, index) => ({
+  ...character,
+  number: String(index + 1).padStart(3, "0"),
+}));

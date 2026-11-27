@@ -95,7 +95,7 @@ thick cross-shaped scar on under cheek, thin eyebrows, fine upper eyelashes, no 
 
     prompt: `girl, adult female,
 
-black hair, short hair, straight hair, choppy bangs, long bangs, sidelocks, eyes visible through hair, 0.3::fine wispy hair strands::, -1::messy hair, wavy hair, spiked hair, floating hair, parted bangs, undercut, hair covering neck::,
+black hair, short hair, straight hair, choppy bangs, long bangs, eyes visible through hair, 0.3::fine wispy hair strands::, -1::bob hair, messy hair, floating hair, parted bangs, undercut, hair covering neck::,
 
 1.5::voluptuous athletic physique, large breasts, narrow waist, hourglass figure, wide hips, thick toned thighs, toned arms, prominent veins on hands::,
 

@@ -67,7 +67,7 @@ delicate masculine appearance, soft androgynous beauty, relaxed casual styling, 
 
     prompt: `boy, adult male,
 
-black hair, short hair, straight hair, choppy bangs, long bangs, sidelocks, eyes visible through hair, 0.3::fine wispy hair strands::, -1::messy hair, wavy hair, spiked hair, floating hair, parted bangs, undercut, hair covering neck::
+black hair, short hair, straight hair, choppy bangs, long bangs, eyes visible through hair, 0.3::fine wispy hair strands::, -1::messy hair, wavy hair, spiked hair, floating hair, parted bangs, undercut, hair covering neck::,
 
 1.5::massive muscular build, broad shoulders, thick muscular chest, powerful muscular arms, bulky physique, prominent veins on arms and hands::,
 
@@ -109,6 +109,65 @@ thick cross-shaped scar on under cheek, thin eyebrows, fine upper eyelashes, no 
     outfitPrompt: `industrial work jumpsuit, jumpsuit worn halfway down, upper half of jumpsuit tied around waist, fitted sleeveless tank top, military combat boots`,
     negativePrompt: ``,
   },
+{
+    id: "paul",
+    name: "パウル",
+    image: "/images/characters/paul.webp",
+    description: `身長：189cm`,
+
+    profile: [
+      { label: "NAME", value: "パウル" },
+      { label: "AGE", value: "24" },
+      { label: "GENDER", value: "男" },
+      { label: "SPECIES", value: "ブラックサーバル" },
+    ],
+
+    prompt: `male, adult male, furry, anthro, 1.5::black serval, melanistic serval::,
+
+2::jet black fur, pitch-black fur covering entire body::, 1.2::subtle black-on-black spotted fur markings::, short sleek fur,
+
+1.1::very tall stature, elongated body proportions, long legs, long arms::,
+
+1.2::lean muscular build, broad shoulders, narrow waist, high waistline, long neck, proportionally small head::,
+
+1.1::feline head, elongated feline muzzle, oversized rounded serval ears::,
+
+short slender feline tail, solid jet black tail, smooth short fur on tail,
+
+narrow half-lidded eyes, golden amber eyes, vertical slit pupils, long black whiskers, composed expression,
+
+1.1::gold-rimmed pince-nez glasses, delicate gold glasses chain, asymmetrical gold ear cuffs, black leather gloves::,
+
+gold tie pin, antique gold pocket watch chain, dark burgundy pocket square,`,
+    outfitPrompt: `1.3::classic black three-piece suit, tailored suit jacket, fitted waistcoat, crisp white dress shirt, black necktie::, tailored trousers, polished black oxford shoes,`,
+    negativePrompt: ``,
+},
+{
+    id: "kaila",
+    name: "海羅",
+    furigana: "かいら",
+    image: "/images/characters/kaila.webp",
+    description: `身長：155cm`,
+
+    profile: [
+      { label: "NAME", value: "海羅" },
+      { label: "AGE", value: "20" },
+      { label: "GENDER", value: "女" },
+      { label: "SPECIES", value: "シャチ" },
+    ],
+
+    prompt: `girl, adult female, orca kemonomimi, petite stature, soft curvy figure, moderately full bust, rounded hips, plump thighs,
+
+1.5::large thick orca tail, chunky rounded tail base, black and white tail coloration, broad horizontal whale tail flukes::,
+
+1.5::black hair with distinct white patches, orca-inspired hair coloration, large irregular white sections on jet black hair::, fluffy short bob, rounded hairstyle, soft bangs, blunt central forelock, -1::choppy bangs::,
+
+1.5::short eyebrows, thick eyebrows, tapered eyebrows::,
+
+round eyes, deep ocean blue eyes, chubby cheeks, cheerful smile, playful expression, small dorsal fin on head,`,
+    outfitPrompt: `black and white oversized hoodie, short pleated black skirt, chunky sneakers,`,
+    negativePrompt: ``,
+},
 {
     id: "nagi",
     name: "凪",
@@ -910,7 +969,7 @@ multiple ear piercings, multiple black metal earrings, multiple silver ear cuffs
 1.5::mature voluptuous figure, overwhelmingly full bust, explosive breast volume, hyper-bulging bust, deep prominent cleavage, tight narrow waist, pronounced hourglass figure, smooth feminine curves::,
 
 long black cow tail, black tuft at tail tip,`,
-    outfitPrompt: `1.5::black sleeveless dress, thin shoulder straps, low square neckline, oversized off-ethnic patterned cardigan, dark brown and bronze geometric and floral motifs, off-the-shoulder fit, open front, long balloon sleeves, chunky vertical ribbing, elegant black high heels, pointed-toe stiletto pumps, slender high heels::,`,
+    outfitPrompt: `lack sleeveless dress, thin shoulder straps, low square neckline, oversized off-ethnic patterned cardigan, dark brown and bronze geometric and floral motifs, off-the-shoulder fit, open front, long balloon sleeves, chunky vertical ribbing, elegant black high heels, pointed-toe stiletto pumps, slender high heels,`,
     negativePrompt: `high ponytail, high-set ponytail, mid-height ponytail, topknot, bun, double buns, half-up hairstyle, crown ponytail, elevated hair tie, human ears, visible ears, ears, earlobes, outer ears, ear details`,
 },
 {
